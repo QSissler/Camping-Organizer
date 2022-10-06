@@ -1,7 +1,10 @@
 import {useState} from 'react';
+import {useHistory} from 'react-router-dom'
 
-function TripForm(){
+
+function TripForm({trips, setTrips}){
     const [destination, setDestination] = useState("")
+    const history = useHistory()
 
     function handleDestinationChange(e){
         setDestination(e.target.value)
@@ -22,7 +25,7 @@ function TripForm(){
             body: JSON.stringify(newDestination)
             })
             .then(res => res.json())
-            .then(console.log)
+            .then(newTrip => setTrips([...trips, newTrip]))
 
         setDestination("")
     }
@@ -30,11 +33,8 @@ function TripForm(){
     return(
         <div>
             <h1>Add a Trip!</h1>
-            <form onSubmit={e => handleTripFormSubmit(e)}>
-        <label>
-          Destination
-          </label>
-        <input type='text' name='destination' value={destination} onChange={(e) => handleDestinationChange(e)} />
+            <form onSubmit={e => handleTripFormSubmit(e)} className="form">
+        <input type='text' placeholder="Destination" name='destination' value={destination} onChange={(e) => handleDestinationChange(e)} />
         <input
           type="submit"
           name="submit"

@@ -5,6 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  /* background-image: url(); */
+  background-image: url(https://images.pexels.com/photos/1353938/pexels-photo-1353938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    /* background-image: url(https://images.pexels.com/photos/2558460/pexels-photo-2558460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2); */
+  font-family: "Sora", sans-serif;
 }
 
 code {
@@ -28,8 +36,103 @@ nav a {
   transition: 0.1s;
 }
 
+nav button {
+  margin-left: 30px;
+  /* background-color: #ffffff; */
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+
 /* nav a:hover,
 nav a:active {
   color: #114673;
   border-bottom: 2px solid #ffff;
 } */
+
+
+
+.tripCard {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 300px;
+  margin-left: 10px;
+}
+
+.wholeCard {
+  border: black solid;
+  width: 300px;
+  display: inline-block;
+  margin-right: 20px;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+
+.checkbox {
+  width: 1.50em;
+  height: 1.50em;
+  margin-top: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  /* height: 40px;
+  width: 150px; */
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
+.itemCard {
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+}
+
+.lists {
+  display: flexbox;
+  /* text-align: center; */
+  /* padding: 30px; */
+
+}
+
+.packingHeader {
+  margin-bottom: 50px;
+}
+
+.deleteButton {
+  background-color: #038e21;
+  width: 1.75em;
+  height: 1.75em;
+  margin-left: 10px;
+}
+
+.itemStuff{
+  display: inline-flex;
+}
+
+.login{
+  display: flexbox
+}

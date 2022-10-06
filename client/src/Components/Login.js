@@ -35,7 +35,7 @@ function Login({user, setUser}){
         if(res.ok){
             res.json().then(user => {
                 setUser(user)
-                history.push("/home")
+                history.push("/")
             })
         }else {
             res.json().then(json => setErrors(json.errors))
@@ -48,20 +48,14 @@ function Login({user, setUser}){
    
 
     return(
-        <div>
+        <div className="form">
             <h2>Log In</h2>
         <form onSubmit={onSubmit}>
-        <label>
-          Username
-          </label>
-        <input type='text' name='username' value={username} onChange={(e) => handleUsernameChange(e)} />
-      
-        <label>
-         Password
-         </label>
-        <input type='password' name='password' value={password} onChange={(e) => handlePasswordChange(e)} />
+        <input placeholder="Username"type='text' name='username' value={username} onChange={(e) => handleUsernameChange(e)} />
+      <div></div>
+        <input placeholder="Password" type='password' name='password' value={password} onChange={(e) => handlePasswordChange(e)} />
        
-       
+       <div></div>
         <input type='submit' value='Log in!' />
       </form>
       <h3>

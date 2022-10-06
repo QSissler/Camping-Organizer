@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
-
+import {useHistory} from 'react-router-dom'
 
 function NavBar({ setUser, user }) {
+    const history = useHistory()
 
     function handleLogoutClick(){
         fetch("/logout", {
@@ -9,6 +10,7 @@ function NavBar({ setUser, user }) {
         }).then((res => {
             if (res.ok){
                 setUser(null)
+                history.push("/")
             }
         }))
     }
@@ -24,11 +26,8 @@ function NavBar({ setUser, user }) {
       <NavLink exact to="/itemform">
         Item Form
       </NavLink>
-      <NavLink exact to="/mytrips">
-        My Trips
-      </NavLink>
       <NavLink exact to="/myitems">
-        My Items
+        Packing Lists
       </NavLink>
       <button onClick={handleLogoutClick}>Logout</button>
     </nav> ) :

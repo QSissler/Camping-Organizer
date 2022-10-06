@@ -46,19 +46,13 @@ function Signup({user, setUser}) {
 
 
     return (
-        <div> 
+        <div className="form"> 
         <form onSubmit={onSubmit}>
-        <label>
-          Username
-          </label>  
-          <input type='text' name='username' value={username} onChange={e => handleUsernameChange(e)} />
-       
-        <label>
-         Password
-         </label>
-        <input type='password' name='password' value={password} onChange={e => handlePasswordChange(e)} />
-        
-       
+            <h1>Create a New Account!</h1>
+          <input placeholder="Username" type='text' name='username' value={username} onChange={e => handleUsernameChange(e)} />
+        <div></div>
+        <input placeholder="Password" type='password' name='password' value={password} onChange={e => handlePasswordChange(e)} />
+        <div></div>
         <input type='submit' value='Sign up!' />
       </form>
         </div>

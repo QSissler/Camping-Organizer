@@ -12,9 +12,9 @@ u4 = User.create(username: "Quinn", password: "quinn1")
 
 
 puts "seeding item data"
-i1 = Item.create!(name: "Tent", image: "tent.jpg", category: "general camping gear", packed: false, trip_id: t1.id, user_id: u2.id)
-i3 = Item.create!(name: "Hot Dogs", image: "hotdog.jpg", category: "food", packed: false, trip_id: t1.id, user_id: u3.id)
-i4 = Item.create!(name: "Canopy", image: "canopy.jpg", category: "general camping gear", packed: false, trip_id: t1.id, user_id: u4.id)
+i1 = Item.create!(name: "Tent", category: "general camping gear", packed: false, trip_id: t1.id, user_id: u2.id)
+i3 = Item.create!(name: "Hot Dogs", category: "food", packed: false, trip_id: t1.id, user_id: u3.id)
+i4 = Item.create!(name: "Canopy", category: "general camping gear", packed: false, trip_id: t1.id, user_id: u4.id)
 
 
 puts "seeding complete!"

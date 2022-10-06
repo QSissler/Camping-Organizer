@@ -6,24 +6,32 @@ import Login from "./Components/Login";
 import Home from "./Components/Home";
 import ItemContainer from "./Components/ItemContainer";
 import Signup from "./Components/Signup";
-import Trips from "./Components/Trips";
 import TripForm from "./Components/TripForm";
 import ItemForm from "./Components/ItemForm";
 
 function App() {
   const [user, setUser] = useState(null);
+  const [trips, setTrips] = useState([]);
+
   
 
   useEffect(() => {
     // auto-login
     fetch("/me").then((r) => {
       if (r.ok) {
-        r.json().then((user) => setUser(user));
+        r.json().then((user) => {
+          setUser(user)
+        });
       }
     });
   }, []);
 
-  // if(!user) return <Login setUser={setUser} />;
+
+    useEffect(() => {
+        fetch("/trips")
+        .then(res => res.json())
+           .then(setTrips)
+           }, [])
   
 
   return (
@@ -45,19 +53,15 @@ function App() {
           </Route>
 
           <Route exact path="/tripform">
-            <TripForm/>
+            <TripForm trips={trips} setTrips={setTrips}/>
           </Route>
 
           <Route exact path="/itemform">
-            <ItemForm/>
-          </Route>
-
-          <Route exact path="/mytrips">
-            <Trips/>
+            <ItemForm user={user} trips={trips}/>
           </Route>
 
           <Route exact path="/myitems">
-            <ItemContainer/>
+            <ItemContainer trips={trips}/>
           </Route>
 
         </Switch>

@@ -10,9 +10,4 @@ class ApplicationController < ActionController::API
         render json: {errors: ["Not Authorized, please login"]}, status: :unauthorized unless @current_user
     end
 
-#   def hello_world
-#     session[:count] = (session[:count] || 0) + 1
-#     render json: { count: session[:count] }
-#   end
-
 end

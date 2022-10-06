@@ -1,7 +1,8 @@
 class TripsController < ApplicationController
 
     def index
-        trips = Trip.all
+        user = User.find_by(id: session[:user_id])
+        trips = user.trips.uniq
         render json: trips, status: :ok
     end
 
